@@ -32,7 +32,7 @@ export function StepIndicator({ currentStep, className }: StepIndicatorProps) {
         )}>
           2
         </div>
-        <span className="text-xs mt-1">Prospect</span>
+        <span className="text-xs mt-1">Suspects</span>
       </div>
       
       <div className={cn(
