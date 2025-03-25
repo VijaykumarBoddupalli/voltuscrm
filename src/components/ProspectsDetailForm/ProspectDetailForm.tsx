@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -224,22 +223,20 @@ export function ProspectDetailForm({
                 <Button 
                   type="button" 
                   variant="outline" 
-                  onClick={goToPreviousTab}
-                  disabled={activeTab === "company"}
+                  onClick={() => window.history.back()}
                 >
                   Cancel
                 </Button>
                 
                 <div className="flex space-x-2">
-                  {activeTab !== "business-intel" ? (
-                    <Button type="button" onClick={goToNextTab}>
+                  {activeTab !== "business-intel" && (
+                    <Button type="button" onClick={goToNextTab} className="bg-blue-600 hover:bg-blue-700">
                       Next
                     </Button>
-                  ) : (
-                    <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
-                      Save Changes
-                    </Button>
                   )}
+                  <Button type="submit" className="bg-green-600 hover:bg-green-700">
+                    Save Changes
+                  </Button>
                 </div>
               </div>
             </div>
