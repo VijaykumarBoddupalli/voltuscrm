@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { User } from "lucide-react";
+import { Form } from "@/components/ui/form";
 import { prospectFormSchema } from "./schema";
 import { CompanyTab } from "./tabs/CompanyTab";
 import { ServicesTab } from "./tabs/ServicesTab";
@@ -172,78 +172,80 @@ export function ProspectDetailForm({
         } />
       </div>
 
-      <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-          <div className="px-6 border-b">
-            <TabsList className="h-14">
-              <TabsTrigger value="company" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
-                Company
-              </TabsTrigger>
-              <TabsTrigger value="services" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
-                Services
-              </TabsTrigger>
-              <TabsTrigger value="contacts" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
-                Contacts
-              </TabsTrigger>
-              <TabsTrigger value="shipping" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
-                Shipping
-              </TabsTrigger>
-              <TabsTrigger value="business-intel" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
-                Business Intel
-              </TabsTrigger>
-            </TabsList>
-          </div>
-
-          <div className="p-6">
-            <div className="mb-2 text-sm text-red-500">
-              * Indicates required fields
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(handleSubmit)}>
+          <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
+            <div className="px-6 border-b">
+              <TabsList className="h-14">
+                <TabsTrigger value="company" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
+                  Company
+                </TabsTrigger>
+                <TabsTrigger value="services" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
+                  Services
+                </TabsTrigger>
+                <TabsTrigger value="contacts" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
+                  Contacts
+                </TabsTrigger>
+                <TabsTrigger value="shipping" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
+                  Shipping
+                </TabsTrigger>
+                <TabsTrigger value="business-intel" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4">
+                  Business Intel
+                </TabsTrigger>
+              </TabsList>
             </div>
-            
-            <TabsContent value="company">
-              <CompanyTab form={form} />
-            </TabsContent>
-            
-            <TabsContent value="services">
-              <ServicesTab form={form} />
-            </TabsContent>
-            
-            <TabsContent value="contacts">
-              <ContactsTab form={form} />
-            </TabsContent>
-            
-            <TabsContent value="shipping">
-              <ShippingTab form={form} />
-            </TabsContent>
-            
-            <TabsContent value="business-intel">
-              <BusinessIntelTab form={form} />
-            </TabsContent>
-            
-            <div className="flex justify-between mt-8 pt-6 border-t">
-              <Button 
-                type="button" 
-                variant="outline" 
-                onClick={goToPreviousTab}
-                disabled={activeTab === "company"}
-              >
-                Cancel
-              </Button>
+
+            <div className="p-6">
+              <div className="mb-2 text-sm text-red-500">
+                * Indicates required fields
+              </div>
               
-              <div className="flex space-x-2">
-                {activeTab !== "business-intel" ? (
-                  <Button type="button" onClick={goToNextTab}>
-                    Next
-                  </Button>
-                ) : (
-                  <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
-                    Save Changes
-                  </Button>
-                )}
+              <TabsContent value="company">
+                <CompanyTab form={form} />
+              </TabsContent>
+              
+              <TabsContent value="services">
+                <ServicesTab form={form} />
+              </TabsContent>
+              
+              <TabsContent value="contacts">
+                <ContactsTab form={form} />
+              </TabsContent>
+              
+              <TabsContent value="shipping">
+                <ShippingTab form={form} />
+              </TabsContent>
+              
+              <TabsContent value="business-intel">
+                <BusinessIntelTab form={form} />
+              </TabsContent>
+              
+              <div className="flex justify-between mt-8 pt-6 border-t">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={goToPreviousTab}
+                  disabled={activeTab === "company"}
+                >
+                  Cancel
+                </Button>
+                
+                <div className="flex space-x-2">
+                  {activeTab !== "business-intel" ? (
+                    <Button type="button" onClick={goToNextTab}>
+                      Next
+                    </Button>
+                  ) : (
+                    <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+                      Save Changes
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </Tabs>
-      </form>
+          </Tabs>
+        </form>
+      </Form>
     </div>
   );
 }

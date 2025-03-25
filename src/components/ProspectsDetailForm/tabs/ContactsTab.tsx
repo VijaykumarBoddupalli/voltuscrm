@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { UseFormReturn, useFieldArray } from "react-hook-form";
 import { ProspectFormValues } from "../schema";
 import { 
@@ -365,13 +364,13 @@ export function ContactsTab({ form }: ContactsTabProps) {
 
                 <FormField
                   control={form.control}
-                  name={`additionalContacts.${index}.role`}
+                  name={`additionalContacts.${index}.roleInDecisionMaking`}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Role</FormLabel>
                       <Select 
                         onValueChange={field.onChange} 
-                        value={field.value}
+                        defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
@@ -398,7 +397,7 @@ export function ContactsTab({ form }: ContactsTabProps) {
                       <FormLabel>Gender</FormLabel>
                       <Select 
                         onValueChange={field.onChange} 
-                        value={field.value}
+                        defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
@@ -425,7 +424,7 @@ export function ContactsTab({ form }: ContactsTabProps) {
                       <FormLabel>Age Group</FormLabel>
                       <Select 
                         onValueChange={field.onChange} 
-                        value={field.value}
+                        defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
