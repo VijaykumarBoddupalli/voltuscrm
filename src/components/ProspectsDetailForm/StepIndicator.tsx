@@ -32,7 +32,7 @@ export function StepIndicator({ currentStep, className }: StepIndicatorProps) {
         )}>
           2
         </div>
-        <span className="text-xs mt-1">Suspects</span>
+        <span className="text-xs mt-1">Contacts</span>
       </div>
       
       <div className={cn(
@@ -47,7 +47,7 @@ export function StepIndicator({ currentStep, className }: StepIndicatorProps) {
         )}>
           3
         </div>
-        <span className="text-xs mt-1">Opportunity</span>
+        <span className="text-xs mt-1">Prospect</span>
       </div>
       
       <div className={cn(

@@ -125,22 +125,18 @@ export function ProspectDetailForm({
     }
   };
 
-  const goToPreviousTab = () => {
+  const getCurrentStep = () => {
     switch (activeTab) {
-      case "services":
-        setActiveTab("company");
-        break;
+      case "company":
+        return 1;
       case "contacts":
-        setActiveTab("services");
-        break;
+      case "services":
+        return 2;
       case "shipping":
-        setActiveTab("contacts");
-        break;
       case "business-intel":
-        setActiveTab("shipping");
-        break;
+        return 3;
       default:
-        break;
+        return 1;
     }
   };
 
@@ -162,13 +158,7 @@ export function ProspectDetailForm({
             </Button>
           </div>
         </div>
-        <StepIndicator currentStep={
-          activeTab === "company" ? 1 :
-          activeTab === "services" ? 2 :
-          activeTab === "contacts" ? 2 :
-          activeTab === "shipping" ? 3 :
-          activeTab === "business-intel" ? 4 : 1
-        } />
+        <StepIndicator currentStep={getCurrentStep()} />
       </div>
 
       <Form {...form}>
