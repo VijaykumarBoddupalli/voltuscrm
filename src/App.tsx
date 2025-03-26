@@ -1,13 +1,4 @@
 
-<<<<<<< HEAD
-export default function App() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-  
-    </div>
-  )
-}
-=======
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,4 +28,4 @@ const App = () => (
 );
 
 export default App;
->>>>>>> personal-repo/main
+
