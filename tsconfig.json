@@ -1,17 +1,32 @@
 {
   "files": [],
   "references": [
+<<<<<<< HEAD
     {
       "path": "./tsconfig.app.json"
     },
     {
       "path": "./tsconfig.node.json"
     }
+=======
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+>>>>>>> personal-repo/main
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
+<<<<<<< HEAD
     }
+=======
+    },
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false
+>>>>>>> personal-repo/main
   }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore node modules
 node_modules/
 
@@ -6,10 +7,16 @@ dist/
 .vite/
 
 # Ignore logs
+=======
+# Logs
+logs
+*.log
+>>>>>>> personal-repo/main
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+<<<<<<< HEAD
 
 # Ignore environment variables
 .env
@@ -38,3 +45,22 @@ pnpm-lock.yaml
 eslintcache
 .prettierignore
 .prettiercache
+=======
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+>>>>>>> personal-repo/main

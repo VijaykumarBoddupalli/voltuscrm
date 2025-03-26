@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "style": "default",
   "rsc": true,
   "tailwind": {
@@ -6,13 +7,33 @@
     "css": "app/globals.css",
     "baseColor": "neutral",
     "cssVariables": true
+=======
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/index.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+>>>>>>> personal-repo/main
   },
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils",
+<<<<<<< HEAD
     "ui": "@/registry/new-york-v4/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
   "iconLibrary": "lucide"
 }
+=======
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  }
+}
+>>>>>>> personal-repo/main
